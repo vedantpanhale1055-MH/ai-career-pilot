@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #060a10;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+}
+
+::selection {
+  background: rgba(0, 245, 196, 0.25);
+  color: #00f5c4;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: rgba(0,245,196,0.2); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,245,196,0.4); }
+
+input::placeholder { color: rgba(148,163,184,0.4); }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.spinner-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #00f5c4;
+  border-right-color: #7c6af7;
+  animation: spin 1s linear infinite;
+}
+.spinner-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #f7a06a;
+  animation: spin-reverse 0.8s linear infinite;
+}
+.pulse-text {
+  animation: pulse 2s ease-in-out infinite;
+}
+.card-hover {
+  transition: transform 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+.btn-main {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-main:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
