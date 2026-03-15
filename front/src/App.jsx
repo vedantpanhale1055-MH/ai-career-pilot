@@ -93,7 +93,7 @@ export default function App() {
     setRoadmap(null);
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5500/api/generate", {
+      const res = await fetch("https://ai-career-pilot-7rqc.onrender.com/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ currentSkill, targetGoal }),
